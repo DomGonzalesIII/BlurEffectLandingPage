@@ -1,0 +1,148 @@
+/*csslint empty-rules: false, ids: false, qualified-headings: false, known-properties: false*/
+
+/******************** LARGE SCREENS (>=TABLET) *******************/
+/************************* TAG SELECTORS *************************/
+
+body {
+  background-color: #000; /* fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #f4f4f4;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+footer {
+  padding: 1rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/************************ CLASS SELECTORS ************************/
+
+.bg-dark {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+.bg-light {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.center {
+  margin: auto;
+  text-align: center;
+}
+
+.container {
+  margin: auto;
+  max-width: 960px;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+.content {
+  height: 350px;
+  left: 50%;
+  margin-left: -145px;
+  margin-top: 55px;
+  position: absolute;
+  text-align: center;
+  top: 6%;
+  transition: all 1000ms;
+  width: 300px;
+  z-index: 1;
+}
+
+.content .logo {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.content .title {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+}
+
+.fa-laptop-code {
+  padding-top: 15px;
+}
+
+/* Getting Error "Expected RBRACE" and warning "Unknown property 'grid-template-columns'" for the grid-template-columns property but still works in chrome version 74.0.3729.169 */
+.grid-2 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Getting Error "Expected RBRACE" and warning "Unknown property 'grid-template-columns'" for the grid-template-columns property but still works in chrome version 74.0.3729.169 */
+.grid-3 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.showcase::after {
+  background-image: url("../img/showcase.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content:'';
+  display: block;
+  filter: blur(10px) grayscale(90%);
+  -webkite-filter: blur(10px) grayscale(90%);
+  height: 100vh;
+  transition: all 1000ms;
+  width: 100%;
+}
+
+.showcase:hover::after {
+  filter: blur(0px) grayscale(90%);
+  -webkite-filter: blur(0px) grayscale(90%);
+}
+
+/***************** SMALL SCREENS: PORTRAIT (PHONE) ***************/
+
+@media(max-width: 560px) {
+
+  /*********************** CLASS SELECTORS ***********************/
+
+  .content {
+    margin-top: 5px;
+    top: 5%;
+  }
+
+  .content .logo {
+    height: 140px;
+    width: 140px;
+  }
+
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .services div {
+    border-bottom: #333 dashed 1px;
+    padding: 1.2rem 1rem;
+  }
+
+  .showcase::after {
+    height: 50vh;
+  }
+
+}
+
+/***************** SMALL SCREENS: LANDSCAPE (PHONE) **************/
+
+@media(max-height: 500px) {
+
+  /*********************** CLASS SELECTORS ***********************/
+
+  .content .title {
+    display: none;
+  }
+
+}
